@@ -1,16 +1,16 @@
 class Pokemon:
-    def __init__(self, nombre, tipo):
+    def __init__(self, nombre, tipo, habilidad):
         self.nombre = nombre
         self.tipo = tipo
+        self.habilidad = habilidad
 
     def descripcion(self):
-        return f"{self.nombre} es un Pokémon de tipo {self.tipo}."
-
+        return f"{self.nombre} es un Pokémon de tipo {self.tipo} y su habilidad es {self.habilidad}."
+    
 
 class PokemonAgua(Pokemon):
     def __init__(self, nombre, habilidad):
-        super().__init__(nombre, "Agua")
-        self.habilidad = habilidad
+        super().__init__(nombre, "Agua", habilidad)
 
     def descripcion(self):
         return f"{self.nombre} es de tipo Agua y su habilidad es {self.habilidad}."
@@ -18,17 +18,27 @@ class PokemonAgua(Pokemon):
 
 class PokemonFuego(Pokemon):
     def __init__(self, nombre, habilidad):
-        super().__init__(nombre, "Fuego")
-        self.habilidad = habilidad
+        super().__init__(nombre, "Fuego", habilidad)
 
     def descripcion(self):
         return f"{self.nombre} es de tipo Fuego y su habilidad es {self.habilidad}."
 
 
-pokemon1 = Pokemon("Pikachu", "Eléctrico")
+class PokemonDragon(Pokemon):
+    def __init__(self, nombre, habilidad): 
+        super().__init__(nombre, "Dragón", habilidad)
+
+    def descripcion(self):
+        return f"{self.nombre} es de tipo Dragón y su habilidad es {self.habilidad}."
+
+
+# ---- Crear objetos y probar ----
+pokemon1 = Pokemon("Pikachu", "Eléctrico", "Impactrueno")
 pokemon2 = PokemonAgua("Squirtle", "Chorro de agua")
 pokemon3 = PokemonFuego("Charmander", "Lanzallamas")
+pokemon4 = PokemonDragon("Rayquaza", "Danza Dragón")
 
 print(pokemon1.descripcion())
 print(pokemon2.descripcion())
 print(pokemon3.descripcion())
+print(pokemon4.descripcion())
